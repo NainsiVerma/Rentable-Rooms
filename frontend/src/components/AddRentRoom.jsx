@@ -33,6 +33,7 @@ const AddRentRoom = () => {
       type: "",
       contact: "",
       name: "",
+      address: "",
       createdAt: new Date(),
     },
 
@@ -115,6 +116,14 @@ const AddRentRoom = () => {
                 onChange={rentForm.handleChange}
                 value={rentForm.values.description}
                 name="description"
+              ></textarea>
+              
+              <label htmlFor="">Address</label>
+              <textarea
+                className="form-control mb-3"
+                onChange={rentForm.handleChange}
+                value={rentForm.values.address}
+                name="address"
               ></textarea>
 
               <label htmlFor="">Upload Image</label>
