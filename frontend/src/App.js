@@ -9,6 +9,8 @@ import {Toaster} from 'react-hot-toast';
 import ListRent from './components/ListRent';
 import Signup from './components/SignUp';
 import Navbar from './components/Navbar';
+import AddRentRoom from './components/AddRentRoom';
+import ViewDetails from './components/ViewDetails';
 
 
 function App() {
@@ -20,6 +22,8 @@ function App() {
       <Route path='/home' element={<Home/>}/>
       <Route path='/login' element={<Login/>}/>
       <Route path='/browse' element={<Browse/>}/>
+      <Route path='/addroom' element={<AddRentRoom/>}/>
+      <Route path='/details/:id' element={<ViewDetails/>}/>
       <Route path='/listrent' element={<ListRent/>}/>
       <Route path='/signup' element={<Signup/>}/>
       

@@ -42,8 +42,8 @@ const Navbar = () => {
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink className="nav-link" to="/rentabledata">
-            Rentable Data
+          <NavLink className="nav-link" to="/addroom">
+            Add Rent Space
           </NavLink>
           </li>
         <li className="nav-item ">
