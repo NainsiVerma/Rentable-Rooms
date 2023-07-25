@@ -19,9 +19,9 @@ const Browse = () => {
 
   const displaySpaces = () => {
     return locationList.map((shop, index) => (
-      <div className="col-md-4">
+      <div className="col-md-4 mb-4">
         <div className="card">
-          <img className="card-img-top" src={'http://localhost:5000/'+shop.image} alt="" />
+          <img className="card-img" src={shop.image ? ('http://localhost:5000/'+shop.image) : placeholder} alt="" />
           <div className="card-body">
             <p className="text-muted">{shop.type}</p>
             <h4>{shop.name}</h4>
@@ -36,13 +36,13 @@ const Browse = () => {
   };
 
   return (
-    <div>
-      <header>
+    <div className="browse-page" style={{backgroundImage: `url('https://static.vecteezy.com/system/resources/thumbnails/015/849/322/original/houses-and-key-on-blue-background-buy-or-rent-a-house-concept-for-new-property-mortgage-and-real-estate-investment-homes-for-sale-copy-space-for-your-text-or-logo-modern-layout-3d-rendering-video.jpg')`}}>
+      <header className="browse-header container">
         <div className="container py-5">
-          <h1>Browse Rentable Spaces near You</h1>
+          <h1 className="display-3 fw-bold">Browse Rentable Spaces near You</h1>
         </div>
       </header>
-      <div className="container">
+      <div className="container mt-5">
         <div className="row">{displaySpaces()}</div>
       </div>
     </div>
