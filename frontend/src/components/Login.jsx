@@ -51,9 +51,9 @@ const Login = () => {
   });
 
   return (
-    <div>
-      <div className="col-md-3 mx-auto">
-        <div className="card">
+    <div className="login-page">
+      <div className="col-md-3 mx-auto vh-100 d-flex align-items-center">
+        <div className="card w-100">
           <div className="card-body">
             <h2 className='my-5'>Login Form</h2>
             <form onSubmit={loginForm.handleSubmit}>

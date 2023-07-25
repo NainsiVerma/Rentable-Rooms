@@ -4,6 +4,15 @@ import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import * as Yup from "yup";
 
+const addrentSchema = Yup.object().shape({
+  name: Yup.string().required("Required"),
+  rent: Yup.string().required("Required"),
+  contact: Yup.string().required("Required"),
+  type: Yup.string().required("Required"),
+  description: Yup.string().required("Required"),
+  address: Yup.string().required("Required"),
+});
+
 const AddRentRoom = () => {
   const navigate = useNavigate();
 
@@ -30,7 +39,7 @@ const AddRentRoom = () => {
       image: "",
       description: "",
       rent: "",
-      type: "",
+      type: "Hostel Room",
       contact: "",
       name: "",
       address: "",
@@ -54,7 +63,7 @@ const AddRentRoom = () => {
           title: "Success",
           text: "Space Added Successfully",
         });
-        //   resetForm();
+          resetForm();
       } else {
         Swal.fire({
           icon: "error",
@@ -64,17 +73,19 @@ const AddRentRoom = () => {
       }
       // add code here to connect to backend
     },
+    validationSchema: addrentSchema,
   });
 
   return (
-    <div>
-      <div className="col-md-3 mx-auto">
-        <div className="card">
+    <div className="add-rent">
+      <div className="col-md-6 mx-auto vh-100 d-flex justify-content-center align-items-center">
+        <div className="card w-100">
           <div className="card-body">
-            <h2 className="my-5 text-center">Signup Form</h2>
+            <h2 className="my-5 text-center">Add your Rentable Space</h2>
 
             <form onSubmit={rentForm.handleSubmit}>
               <label htmlFor="">Name</label>
+              <span style={{color: 'red', fontSize: 15, marginLeft: 10}}>{rentForm.touched.name && rentForm.errors.name}</span>
               <input
                 className="form-control mb-3"
                 onChange={rentForm.handleChange}
@@ -83,6 +94,7 @@ const AddRentRoom = () => {
               />
 
               <label htmlFor="">Monthly Rent</label>
+              <span style={{color: 'red', fontSize: 15, marginLeft: 10}}>{rentForm.touched.rent && rentForm.errors.rent}</span>
               <input
                 className="form-control mb-3"
                 onChange={rentForm.handleChange}
@@ -91,6 +103,7 @@ const AddRentRoom = () => {
               />
 
               <label htmlFor="">Contact</label>
+              <span style={{color: 'red', fontSize: 15, marginLeft: 10}}>{rentForm.touched.contact && rentForm.errors.contact}</span>
               <input
                 className="form-control mb-3"
                 onChange={rentForm.handleChange}
@@ -99,8 +112,9 @@ const AddRentRoom = () => {
               />
 
               <label htmlFor="">Type</label>
+              <span style={{color: 'red', fontSize: 15, marginLeft: 10}}>{rentForm.touched.type && rentForm.errors.type}</span>
               <select
-              className="form-control"
+              className="form-control mb-3"
                 onChange={rentForm.handleChange}
                 value={rentForm.values.type}
                 name="type"
@@ -111,6 +125,7 @@ const AddRentRoom = () => {
               </select>
 
               <label htmlFor="">Description</label>
+              <span style={{color: 'red', fontSize: 15, marginLeft: 10}}>{rentForm.touched.description && rentForm.errors.description}</span>
               <textarea
                 className="form-control mb-3"
                 onChange={rentForm.handleChange}
@@ -119,6 +134,7 @@ const AddRentRoom = () => {
               ></textarea>
               
               <label htmlFor="">Address</label>
+              <span style={{color: 'red', fontSize: 15, marginLeft: 10}}>{rentForm.touched.address && rentForm.errors.address}</span>
               <textarea
                 className="form-control mb-3"
                 onChange={rentForm.handleChange}
@@ -127,6 +143,7 @@ const AddRentRoom = () => {
               ></textarea>
 
               <label htmlFor="">Upload Image</label>
+              
               <input
                 className="form-control mb-3"
                 type="file"

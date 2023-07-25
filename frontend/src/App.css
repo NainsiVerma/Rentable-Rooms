@@ -8,10 +8,27 @@
 .browse-page{
   background-size: cover;
   min-height: 100vh;
+  background-attachment: fixed;
 }
 
 .card-img{
   height: 200px;
   width: 100%;
   object-fit: cover;
+}
+
+.login-page, .signup-page{
+  background-image: url('https://assets-news.housing.com/news/wp-content/uploads/2022/02/02161234/Minimalist-interior-design-What-is-it-and-how-to-incorporate-it-in-your-home.jpg');
+  background-size: cover;
+  min-height: 100vh;
+  background-position: bottom;
+}
+
+
+.add-rent{
+  background-image: url('https://images.squarespace-cdn.com/content/v1/5eecd6bc7a084f5a2c13627c/be78213b-4d86-4f79-a0c1-3a42b59152e1/Adobe+-+Pink+Chair+with+Table.jpeg?format=1500w');
+  background-size: cover;
+  min-height: 100vh;
+  background-position: bottom;
+
 }

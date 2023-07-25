@@ -23,7 +23,7 @@ const Browse = () => {
         <div className="card">
           <img className="card-img" src={shop.image ? ('http://localhost:5000/'+shop.image) : placeholder} alt="" />
           <div className="card-body">
-            <p className="text-muted">{shop.type}</p>
+            <p className="text-muted fw-bold">{shop.type ? shop.type : 'Not Specified'}</p>
             <h4>{shop.name}</h4>
             <p>{shop.description}</p>
             <NavLink className="btn btn-primary" to={"/details/" + shop._id}>

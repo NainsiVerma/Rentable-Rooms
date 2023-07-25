@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 import * as Yup from 'yup';
 
 const signupSchema = Yup.object().shape({
+  name: Yup.string().required('Required'),
   email: Yup.string().email('Invalid email').required('Required'),
   password: Yup.string().required('Password is Required')
 });
@@ -51,9 +52,9 @@ if(res.status ===200){
   });
 
   return (
-    <div>
-      <div className="col-md-3 mx-auto">
-        <div className="card">
+    <div className="signup-page">
+      <div className="col-md-3 mx-auto vh-100 d-flex align-items-center">
+        <div className="card w-100">
           <div className="card-body">
             <h2 className="my-5 text-center">Signup Form</h2>
 
@@ -70,7 +71,7 @@ if(res.status ===200){
               <span style={{color: 'red', fontSize: 15, marginLeft: 10}}>{signupForm.touched.password && signupForm.errors.password}</span>
               <input className="form-control mb-3" type="password" onChange={signupForm.handleChange} value={signupForm.values.password} name="password" />
 
-              <button type="submit" className="btn btn-primary mt-4">Login</button>
+              <button type="submit" className="btn btn-primary mt-4 w-100">Signup Now</button>
             </form>
 
           </div>
