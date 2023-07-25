@@ -78,7 +78,7 @@ const AddRentRoom = () => {
 
   return (
     <div className="add-rent">
-      <div className="col-md-6 mx-auto vh-100 d-flex justify-content-center align-items-center">
+      <div className="col-md-6 mx-auto d-flex justify-content-center align-items-center">
         <div className="card w-100">
           <div className="card-body">
             <h2 className="my-5 text-center">Add your Rentable Space</h2>
